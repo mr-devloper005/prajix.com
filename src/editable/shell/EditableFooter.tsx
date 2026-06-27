@@ -14,7 +14,10 @@ export function EditableFooter() {
       <div className="mx-auto max-w-[var(--editable-container)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
         <div className="border-b border-[var(--editable-border)] pb-10">
           <div className="rounded-[1.8rem] border border-[var(--editable-border)] bg-white px-6 py-7">
-            <h3 className="editable-display text-2xl font-semibold tracking-[-0.04em] text-[var(--slot4-page-text)]">{SITE_CONFIG.name}</h3>
+            <div className="flex items-center gap-3">
+              <img src="/favicon.png" alt={SITE_CONFIG.name} className="h-11 w-11 rounded-xl object-contain" />
+              <h3 className="editable-display text-2xl font-semibold tracking-[-0.04em] text-[var(--slot4-page-text)]">{SITE_CONFIG.name}</h3>
+            </div>
             <p className="mt-3 max-w-md text-[15px] leading-7 text-[var(--slot4-muted-text)]">
               {globalContent.footer?.description || SITE_CONFIG.description}
             </p>

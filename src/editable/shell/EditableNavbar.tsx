@@ -21,6 +21,7 @@ export function EditableNavbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--editable-border)] bg-[var(--editable-nav-bg)]/94 text-[var(--editable-nav-text)] backdrop-blur-xl">
       <nav className="mx-auto flex min-h-[74px] w-full max-w-[var(--editable-container)] items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-3">
+          <img src="/favicon.png" alt={SITE_CONFIG.name} className="h-10 w-10 rounded-xl object-contain" />
           <span className="editable-display text-[2rem] font-semibold leading-none tracking-[-0.05em] text-[var(--slot4-page-text)]">
             {SITE_CONFIG.name}
           </span>
