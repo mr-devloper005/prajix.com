@@ -9,6 +9,7 @@ import { SITE_CONFIG, type TaskKey } from '@/lib/site-config'
 import type { SitePost } from '@/lib/site-connector'
 import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 import { pagesContent } from '@/editable/content/pages.content'
+import { Ads } from '@/lib/ads'
 
 export const revalidate = 3
 
@@ -65,6 +66,7 @@ function SearchResultCard({ post, index }: { post: SitePost; index: number }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
           <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-black">{taskLabel}</span>
         </div>
+        
       ) : null}
       <div className="p-5 sm:p-6">
         {!image ? <span className="rounded-full bg-[var(--editable-page-text,#211713)] px-3 py-1 text-[11px] font-black uppercase tracking-[0.18em] text-white">{taskLabel}</span> : null}
@@ -98,6 +100,8 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.08em] sm:text-7xl">{pagesContent.search.hero.title}</h1>
               <p className="mt-6 max-w-xl text-base font-semibold leading-8 opacity-70">{pagesContent.search.hero.description}</p>
             </div>
+
+             
             <form action="/search" className="self-end rounded-[2rem] border border-[var(--editable-border)] bg-[var(--editable-page-bg,#fff7ee)] p-4 sm:p-5">
               <input type="hidden" name="master" value="1" />
               <label className="flex items-center gap-3 rounded-2xl border border-[var(--editable-border)] bg-white px-4 py-3">
@@ -117,6 +121,7 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <button className="mt-3 inline-flex h-12 w-full items-center justify-center rounded-2xl bg-[var(--editable-page-text,#2f1d16)] px-6 text-sm font-black uppercase tracking-[0.18em] text-[var(--editable-page-bg,#fff7ee)] transition hover:-translate-y-0.5" type="submit">Search</button>
             </form>
           </div>
+          
 
           <div className="mt-10 flex flex-wrap items-end justify-between gap-4">
             <div>
